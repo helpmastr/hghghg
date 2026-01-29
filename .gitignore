@@ -1,0 +1,10 @@
+node_modules
+__pycache__
+.DS_Store
+dist
+build
+*.pyc
+.env
+backend/data/master_drugs_data.csv
+brand_dosage_details.csv
+data/master_drugs_data.csv

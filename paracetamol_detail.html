@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="نظام معلومات الأدوية السعودي Saudi Drugs Information System">
+    <meta name="author" content="Saudi Food & Drug Authority (SFDA)">
+    <noscript><meta http-equiv="refresh" content="0; url=/noScript.html" /></noscript>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>&#x646;&#x638;&#x627;&#x645; &#x645;&#x639;&#x644;&#x648;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x623;&#x62F;&#x648;&#x64A;&#x629; &#x627;&#x644;&#x633;&#x639;&#x648;&#x62F;&#x64A;</title>
+    <link href="/fonts/roboto/roboto.css?v=53F8z0aw8DRnG9ou9x1tuKMPbNjRZWM-VBHl3B0s9-o" rel="stylesheet" />
+    <link href="/fonts/material-icons/materialicons.css?v=8pEJ8MWsFzHRDLY0NI5rssf6T6vankxrJDPnnZxOGrg" rel="stylesheet" />
+    <link href="/lib/bootstrap/dist/css/bootstrap-rtl.css?v=0env-Atj9mTPLILmJGwuDlLIOS_Akxxy4gnH1UUtrjU" rel="stylesheet" />
+    <link href="/lib/bootstrap/dist/css/bootstrap-glyphicons.css?v=U5a39oen_WYzVAAexH5aoahbpqlKHcIzQrnXujf1yio" rel="stylesheet" />
+    <link href="/lib/bootstrap-select/dist/css/bootstrap-select.css?v=DeY2lH0e0tmNnO9XZ-gGVOGk6_YoWlZ49y7CnD3ST00" rel="stylesheet" />
+    <link href="/lib/toastr/toastr.css?v=kKePN_CyxTiMEgsSDu_7z21ru07YOZtR-0UV0JOkt5o" rel="stylesheet" />
+    <link href="/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css?v=JVJiF3s2_kk99xQHfYhfxo_-Dd52ZIruDMOILwPkqv0" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/font-awesome.css?v=YIHlqxkiJtENTMuzIHC9EfZaB5RniGr7kF7juUQJUuc" rel="stylesheet" />
+    <link href="/lib/Waves/dist/waves.css?v=nd3hxjNg6DhkuFIz5IbxLK8Xw2ac0blsDQpF4pkJxUc" rel="stylesheet" />
+    <link href="/lib/animate.css/animate.css?v=IT6GQizZpVcaM1_L_mIiNAYVvZErMgfwewf1GGWXG_I" rel="stylesheet" />
+    <link href="/css/materialize.css?v=ey-J3xahkqficOYUHVX3jexmzvRFrge9bmux4CQr1DQ" rel="stylesheet" />
+    <link href="/css/Publicstyle.css?v=xhOiVjq-54ODzSIeHXoascHsEJm_n_bIHqZatpxnYhg" rel="stylesheet">
+    <link href="/css/Comman.css?v=bcS6_IRqBsBcY1mS_iriWWanrYR0Scdo1ffk8rQGXwQ" rel="stylesheet" />
+    <link href="/css/themes/all-themes.css?v=eGSl5zNTWrXYfUx_EJW9ksC3CUTUUxvxmPiA3aQDtQo" rel="stylesheet" />
+    <link href="/view-resources/Views/Shared/_Layout.css?v=BLxBuNISlF2O5EBHWdsX039NvnIHy-GtcqeI_MbyIc0" rel="stylesheet" />
+    <link href="/lib/enjoyhint/enjoyhint.css?v=rSxIyBbiAvx_48ZcFxbn2DNPCCgEc0FXa2Vb72enxk4" rel="stylesheet" />
+    <link href="/lib/dropzone/dropzone.css?v=IQDlHJdeYZ4gMH87EuB1yEG7ujA7DSEkV_SWfACk8Rg" rel="stylesheet" />
+
+    <!-- View specific styles -->
+    
+    <script type="text/javascript" nonce="c7f26c8w">
+        // This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {};
+        abp.appPath = '/';
+
+    </script>
+    <style>
+        .popover .popover-title {
+            text-align: right;
+            font-weight: bold;
+        }
+        .popover .popover-content {
+            text-align: right;
+            font-size: 14px;
+            font-family: 'Almarai', sans-serif;
+            color: black;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>&#x628;&#x631;&#x62C;&#x627;&#x621; &#x627;&#x644;&#x625;&#x646;&#x62A;&#x638;&#x627;&#x631; ...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar navbar-inverse naav" style="margin-bottom: 0;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse rtl" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/home/DrugSearch">&#x627;&#x644;&#x623;&#x62F;&#x648;&#x64A;&#x629;</a></li>
+                        <li><a href="/Account/Login"><i class="fa fa-key"></i>&nbsp;&#x62A;&#x633;&#x62C;&#x64A;&#x644; &#x627;&#x644;&#x62F;&#x62E;&#x648;&#x644;</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+        <i class="famfamfam-flags sa" title="&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;"></i>
+        <span>&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</span>
+        <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu pull-right">
+                <li><a href="/AbpLocalization/ChangeCulture?cultureName=en"><i class="famfamfam-flags gb"></i> English</a></li>
+
+    </ul>
+</li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="mainContent" class="content">
+        <nav class="navbar naav" style="margin-bottom: 0;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="text-center" href="/">
+                            <img src="/images/logo_sdi.png" style="margin: auto;" width="250">
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-header navbar-toggle2 ">
+                    <button type="button" class="navbar-toggle navbar-toggle2" data-toggle="collapse"
+                            data-target="#myNavbar2">
+                        <span class="icon-bar icon-bar2 "></span>
+                        <span class="icon-bar icon-bar2"></span>
+                        <span class="icon-bar icon-bar2"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse " id="myNavbar2">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#" class="text-right waves-effect" data-trigger="focus"
+                               style="color: #4276a1;" data-container="body" data-toggle="popover" data-placement="bottom" title="" data-content="موقع الكترونى يمكن شركات ووكلاء الادويه من رفع النشرات الممارس الصحى ونشرة معلومات المريض وصورة عبوة الدواء المعتمدة من الهيئة العامة للعذاء والدواء بهدف بناء مرجع وطنى للادوية المسجلة يمكن الرجوع له من قبل الممارس الصحى والمريض كمصدر موثوق للمعلومات الدوائية"
+                               data-original-title="&#x645;&#x646; &#x646;&#x62D;&#x646;">
+                                &#x645;&#x646; &#x646;&#x62D;&#x646;
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-right waves-effect" data-trigger="focus"
+                               style="color: #4276a1;" data-container="body" data-toggle="popover"
+                               data-placement="bottom"
+                               title=""
+                               data-content="&#x627;&#x630;&#x627; &#x643;&#x627;&#x646; &#x644;&#x62F;&#x64A;&#x643;&#x645; &#x645;&#x644;&#x627;&#x62D;&#x638;&#x627;&#x62A; &#x627;&#x648; &#x627;&#x642;&#x62A;&#x631;&#x627;&#x62D;&#x627;&#x62A; &#x64A;&#x631;&#x62C;&#x649; &#x627;&#x644;&#x62A;&#x648;&#x627;&#x635;&#x644; &#x639;&#x644;&#x649;   SDI@SFDA.GOV.SA"
+                               data-original-title="&#x62A;&#x648;&#x627;&#x635;&#x644; &#x645;&#x639;&#x646;&#x627;">
+                                &#x62A;&#x648;&#x627;&#x635;&#x644; &#x645;&#x639;&#x646;&#x627;
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+
+<div class="col-xs-12">
+    <div class="row text-center">
+        <a href="/" class="btn bg-blue btn-lg m-b-10 hover-white">&#x628;&#x62D;&#x62B; &#x62C;&#x62F;&#x64A;&#x62F;</a>
+    </div>
+</div>
+<div class="jumbotron" style="margin-bottom: 0px; background-color: white !important;">
+    <h3 class="text-center" style="color: #57aabf; ">Search Results</h3>
+    <hr width="20%" style="border-top: 3px solid #54ae90;">
+
+    <br>
+    <table class="table s-row">
+        <thead style="margin-bottom: 30px !important">
+                <tr>
+                    <th id="M" style="color:white;">
+                        <a href="javascript:void(0)"
+                           style="color: white;">&#x646;&#x634;&#x631;&#x629; &#x627;&#x644;&#x645;&#x645;&#x627;&#x631;&#x633; &#x627;&#x644;&#x635;&#x62D;&#x64A;</a>
+                    </th>
+                    <th id="A" style="color:white;" type='button'>
+                        <a href="javascript:void(0)"
+                           style="color: white;">&#x646;&#x634;&#x631;&#x629; &#x645;&#x639;&#x644;&#x648;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x645;&#x631;&#x64A;&#x636; &#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a>
+                    </th>
+                    <th id="E" style="color:white;" type='button'>
+                        <a href="javascript:void(0)"
+                           style="color: white;">&#x646;&#x634;&#x631;&#x629; &#x645;&#x639;&#x644;&#x648;&#x645;&#x627;&#x62A; &#x627;&#x644;&#x645;&#x631;&#x64A;&#x636; &#x628;&#x627;&#x644;&#x627;&#x646;&#x62C;&#x644;&#x64A;&#x632;&#x64A;&#x629;</a>
+                    </th>
+                    <th id="f" class="active-tab" type='button'>
+                        <a href="javascript:void(0)" style="color: white;">&#x635;&#x648;&#x631; &#x627;&#x644;&#x62F;&#x648;&#x627;&#x621;</a>
+                    </th>
+                    <th id="D" style="color:white; background-color: #47a4ba;" type='button'>
+                        <a href="javascript:void(0)"
+                           style="color: white;">&#x628;&#x64A;&#x627;&#x646;&#x627;&#x62A; &#x627;&#x644;&#x62F;&#x648;&#x627;&#x621;</a>
+                    </th>
+
+                </tr>
+        </thead>
+    </table>
+    <div id="D-div" class="box-data" style="display: block;">
+        <div class="row">
+
+<div class="modal-body rtl">
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane m-r-60  animated fadeIn active" id="edit-user-details">
+<div class="row clearfix">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="RegisterNumber">&#x631;&#x642;&#x645; &#x627;&#x644;&#x62A;&#x633;&#x62C;&#x64A;&#x644;</label>
+                                    <div class="form-line">
+                                        0812258759
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label col-view" for="RegisterYear">&#x633;&#x646;&#x629; &#x627;&#x644;&#x62A;&#x633;&#x62C;&#x64A;&#x644;</label>
+                                    <div class="form-line">
+                                        2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label col-view" for="TradeName">&#x627;&#x644;&#x627;&#x633;&#x645; &#x627;&#x644;&#x62A;&#x62C;&#x627;&#x631;&#x64A;</label>
+                                    <div class="form-line">
+                                        Myogesic
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label col-view" for="ScientificName">&#x627;&#x644;&#x627;&#x633;&#x645; &#x627;&#x644;&#x639;&#x644;&#x645;&#x64A;</label>
+                                    <div class="form-line">
+                                        ORPHENANDRINE CITRATE, PARACETAMOL
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label " for="Strength">&#x627;&#x644;&#x62A;&#x631;&#x643;&#x64A;&#x632;</label>
+                                    <div class="form-line">
+                                        35,450
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="StrengthUnitName">&#x648;&#x62D;&#x62F;&#x629; &#x627;&#x644;&#x62A;&#x631;&#x643;&#x64A;&#x632;</label>
+                                    <div class="form-line">
+                                        mg
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="AdministrationRouteName">&#x637;&#x631;&#x64A;&#x642;&#x629; &#x627;&#x644;&#x625;&#x633;&#x62A;&#x639;&#x645;&#x627;&#x644;</label>
+                                    <div class="form-line">
+                                        Oral use
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="PharmaceuticalFormName">&#x627;&#x644;&#x634;&#x643;&#x644; &#x627;&#x644;&#x635;&#x64A;&#x62F;&#x644;&#x627;&#x646;&#x64A;</label>
+                                    <div class="form-line">
+                                        Tablet
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="Size">&#x627;&#x644;&#x62D;&#x62C;&#x645;</label>
+                                    <div class="form-line">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="SizeUnitName">&#x648;&#x62D;&#x62F;&#x629; &#x627;&#x644;&#x62D;&#x62C;&#x645;</label>
+                                    <div class="form-line">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="PackageSize">&#x62D;&#x62C;&#x645; &#x627;&#x644;&#x639;&#x628;&#x648;&#x629;</label>
+                                    <div class="form-line">
+                                        50
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="PackageTypeName">&#x627;&#x646;&#x648;&#x627;&#x639; &#x627;&#x644;&#x639;&#x628;&#x648;&#x627;&#x62A;</label>
+                                    <div class="form-line">
+                                        Blister
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="LegalStatusName">&#x637;&#x631;&#x64A;&#x642;&#x629; &#x627;&#x644;&#x635;&#x631;&#x641;</label>
+                                    <div class="form-line">
+                                        Prescription
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="ProductControlName">&#x62D;&#x627;&#x644;&#x629; &#x627;&#x644;&#x645;&#x631;&#x627;&#x642;&#x628;&#x629;</label>
+                                    <div class="form-line">
+                                        Uncontrolled
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="DrugTypeName">&#x646;&#x648;&#x639; &#x627;&#x644;&#x62F;&#x648;&#x627;&#x621;</label>
+                                    <div class="form-line">
+                                        Generic
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="ShelfLife">&#x645;&#x62F;&#x629; &#x627;&#x644;&#x635;&#x644;&#x627;&#x62D;&#x64A;&#x629; &#x628;&#x627;&#x644;&#x623;&#x634;&#x647;&#x631;</label>
+                                    <div class="form-line">
+                                        60
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="StorageConditionsName">&#x634;&#x631;&#x648;&#x637; &#x627;&#x644;&#x62A;&#x62E;&#x632;&#x64A;&#x646;</label>
+                                    <div class="form-line">
+                                        store below 30°c
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="Price">&#x633;&#x639;&#x631; &#x627;&#x644;&#x62C;&#x645;&#x647;&#x648;&#x631; &#x628;&#x627;&#x644;&#x631;&#x64A;&#x627;&#x644;  ( &#x627;&#x644;&#x633;&#x639;&#x631; )</label>
+                                    <div class="form-line">
+                                        16.50
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="hidden" id="Manufacture_NameEn" name="Manufacture.NameEn" value="DAR ALDAWA" />
+                                        <label class="form-label" for="Manufacture_NameEn">&#x627;&#x644;&#x645;&#x635;&#x646;&#x639;</label>
+                                        <div class="form-line">
+                                            DAR ALDAWA
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input type="hidden" id="Agent" name="Agent" value="[Agent 530]" />
+                                        <label class="form-label">&#x627;&#x644;&#x648;&#x643;&#x64A;&#x644;</label>
+                                        <div class="form-line">
+                                            Salehiya Trading Co.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="Company_NameEn">&#x627;&#x644;&#x634;&#x631;&#x643;&#x629; &#x627;&#x644;&#x645;&#x633;&#x648;&#x642;&#x629;</label>
+                                        <div class="form-line">
+                                            DAR Al DAWA
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="AtcCode1">&#x643;&#x648;&#x62F; &#x627;&#x644;&#x643;&#x64A;&#x645;&#x64A;&#x627;&#x621; &#x627;&#x644;&#x639;&#x644;&#x627;&#x62C;&#x64A;&#x629; &#x627;&#x644;&#x62A;&#x634;&#x631;&#x64A;&#x62D;&#x64A;&#x629; 1</label>
+                                    <div class="form-line">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="AtcCode2">&#x643;&#x648;&#x62F; &#x627;&#x644;&#x643;&#x64A;&#x645;&#x64A;&#x627;&#x621; &#x627;&#x644;&#x639;&#x644;&#x627;&#x62C;&#x64A;&#x629; &#x627;&#x644;&#x62A;&#x634;&#x631;&#x64A;&#x62D;&#x64A;&#x629; 2</label>
+                                    <div class="form-line">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+    <div id="E-div" class="box-data">
+<div class="p-20 text-center font-22">
+            <div class="p-10 bg-light-blue  m-t-20 m-b-20 ltr">
+                <i class="fa fa-info-circle"></i>&nbsp;
+                <span style="font-size: large; background-color: rgb(245,245,245); color: rgb(51,51,51); "> SFDA PIL</span>
+                <span style="font-size:small;">  (Patient Information Leaflet (PIL) are under review by Saudi Food and Drug Authority)</span>
+
+            </div>
+</div>
+
+
+<div class="clearfix ltr">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="InventedNameEn">1. What this product is and what it is used for</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p><strong>Myogesic<sup>&reg;</sup></strong> contains the active ingredients orphenadrine citrate and paracetamol. Orphenadrine citrate is a skeletal muscle relaxant. It acts in the central nervous system to produce muscle relaxant effects. Paracetamol is used to treat or prevent pain and reduce fever.</p><p><strong>&nbsp;</strong></p><p><strong>Myogesic<sup>&reg;</sup></strong> is used to treat tension headache and headaches caused by spasm of the muscles in the back of your head and neck.</p><p>It is also used to help relax certain muscles in your body and to relieve the pain and discomfort caused by sprains, strains or other injury to your muscles.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+        <div class="form-group clearfix">
+            <label style="float: left" class="h2" for="PrecautionsEn">2. What you need to know before you use this product</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p><strong>Do not take Myogesic<sup>&reg;</sup> if: </strong></p><p>&middot;&nbsp; You are allergic to orphenadrine citrate, paracetamol or any of the ingredients listed at the end of this leaflet. Always check the ingredients to make sure you can use this medicine.</p><p>&middot;&nbsp; You have any of the following conditions:</p><p>-&nbsp;&nbsp; Glaucoma</p><p>-&nbsp;&nbsp; Intestinal blockage or oesophageal disease</p><p>-&nbsp;&nbsp; An enlarged prostate or bladder obstruction</p><p>-&nbsp;&nbsp; Myasthenia gravis (muscle weakness)</p><p>&nbsp;</p><p><strong>Warnings and precautions</strong></p><p>&middot;&nbsp; Check with your doctor if you:</p><p>-&nbsp;&nbsp; have any heart, liver, or kidney problems</p><p>-&nbsp;&nbsp; have Gilbert&#39;s syndrome</p><p>-&nbsp;&nbsp; have Glucose &ndash; 6 &ndash; phosphate &ndash; dehydrogenase deficiency</p><p>-&nbsp;&nbsp; have any alcohol abuse problems</p><p>-&nbsp;&nbsp; are sensitive to aspirin or other anti-inflammatory medicines or intolerant to pain relievers</p><p>-&nbsp;&nbsp; are malnourished</p><p>-&nbsp;&nbsp; have asthma</p><p>-&nbsp;&nbsp; have any other medical conditions</p><p>-&nbsp;&nbsp; are taking other medicines containing paracetamol</p><p>-&nbsp;&nbsp; take any medicines for any other condition.</p><p><strong>&nbsp;</strong></p><p>During treatment, you may be at risk of developing certain side effects. It is important you understand these risks and how to monitor for them. See additional information under Section 4. &ldquo;<strong>Possible side effects&rdquo;.</strong></p><p><strong>&nbsp;</strong></p><p><strong>Children under 12 years old </strong></p><p>&bull; Do not give <strong>Myogesic<sup>&reg;</sup></strong> to children under the age of 12 years.</p><p><strong>&nbsp;</strong></p><p><strong>Other medicines and Myogesic<sup>&reg;</sup></strong></p><p>Tell your doctor or pharmacist if you are taking any other medicines, including any medicines, vitamins or supplements that you buy without a prescription from your pharmacy, supermarket or health food shop.</p><p>&nbsp;</p><p><strong>Some medicines may interfere with Myogesic<sup>&reg;</sup> and affect how it works including: </strong></p><p>Phenothiazine medicines used to treat serious emotional and mental disorders</p><p>Medicines used to relieve stomach cramps or spasms</p><p>&middot;&nbsp; Medicines which have a sedating effect</p><p>&middot;&nbsp; Alcohol</p><p>&middot;&nbsp; Medicines to prevent blood clots</p><p>&middot;&nbsp; Medicines that affect how quickly food leaves the stomach, such as metoclopramide, domperidone, propantheline, some antidepressants and narcotic painkillers</p><p>&middot;&nbsp; Antibiotics such as chloramphenicol, rifampicin or flucloxacillin</p><p>&middot;&nbsp; Probenecid used for gout</p><p>&middot;&nbsp; Zidovudine used for HIV/AIDS</p><p>&middot;&nbsp; Cholestyramine</p><p>&middot;&nbsp; Anti-epileptic medicines.</p><p>&nbsp;</p><p><strong>Check with your doctor or pharmacist if you are not sure about what medicines, vitamins or supplements you are taking and if these affect Myogesic<sup>&reg;</sup>.</strong></p><p><strong>&nbsp;</strong></p><p><strong>Myogesic<sup>&reg;</sup> with alcohol</strong></p><p>Tell your doctor if you drink alcohol. Drinking alcohol whilst using <strong>Myogesic<sup>&reg;</sup></strong> may increase the occurrence or severity of side effects such as drowsiness.</p><p><strong>&nbsp;</strong></p><p><strong>Pregnancy and breastfeeding </strong></p><p>Check with your doctor if you are pregnant or intend to become pregnant.</p><p>Talk to your doctor if you are breastfeeding or intend to breastfeed.</p><p>&nbsp;</p><p><strong>Driving or using machines</strong></p><p><strong>Be careful before you drive or use any machines or tools until you know how Myogesic<sup>&reg;</sup> affects you. </strong></p><p><strong>Myogesic<sup>&reg;</sup></strong> may cause blurred vision or drowsiness in some people</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="AdministrationRoutesEn">3. How to use this product.</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p><strong>How much to take</strong></p><p>&bull;&nbsp;&nbsp; The usual dose is two tablets three times a day.</p><p>&bull;&nbsp;&nbsp; Do not take more than the recommended dose unless your doctor tells you to.</p><p>&bull;&nbsp;&nbsp; Follow the instructions provided and use <strong>Myogesic<sup>&reg;</sup></strong>until your doctor tells you to stop.</p><p><strong>&nbsp;</strong></p><p><strong>When to take Myogesic<sup>&reg;</sup></strong></p><p>&bull;&nbsp;&nbsp; <strong>Myogesic<sup>&reg;</sup></strong>should be used as directed by your doctor or pharmacist.</p><p>&bull;&nbsp;&nbsp; Do not change the dose unless your doctor tells you to do so.</p><p><strong>&nbsp;</strong></p><p><strong>If you forget to take Myogesic<sup>&reg;</sup></strong></p><p><strong>Myogesic<sup>&reg;</sup></strong> should be used regularly at the same time each day. If you miss your dose at the usual time and remember within an hour or so of the missed dose, take it straight away.</p><p>&nbsp;</p><p><strong>If it is almost time for your next dose, skip the dose you missed and take your next dose when you are meant to. </strong></p><p><strong>Do not take a double dose to make up for the dose you missed.</strong></p><p><strong>&nbsp;</strong></p><p><strong>If you take more Myogesic<sup>&reg;</sup> than you should</strong></p><p>If you think that you have used too much <strong>Myogesic<sup>&reg;</sup></strong>, you may need urgent medical attention. Overdose with paracetamol-containing medicines can lead to liver damage.</p><p>&nbsp;</p><p><strong>You should immediately: </strong></p><p>&middot;&nbsp; contact your doctor, or</p><p>&middot;&nbsp; go to the Emergency Department at your nearest hospital.</p><p><strong>&nbsp;</strong></p><p><strong>Do this even if there are no signs of discomfort or poisoning.</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="SideEffectsEn">4. Possible side effects</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p>Like all medicines, this medicine can cause side effects, although not everybody gets them.</p><p>If you do experience any side effects, most of them are minor and temporary. However, some side effects may need medical attention.</p><p>See the information below and, if you need to, ask your doctor or pharmacist if you have any further questions about side effects.</p><p><strong>&nbsp;</strong></p><p><strong>Less serious side effects:</strong></p><p>&middot;&nbsp; Nausea</p><p>&middot;&nbsp; Dry mouth*</p><p>&middot;&nbsp; Blurred vision</p><p>&middot;&nbsp; Drowsiness</p><p>&middot;&nbsp; Rash</p><p>&middot;&nbsp; Trouble urinating</p><p>&middot;&nbsp; Stomach cramps or pain</p><p>&middot;&nbsp; Constipation</p><p>&middot;&nbsp; Fainting</p><p>&middot;&nbsp; Drop in blood pressure</p><p>&middot;&nbsp; Fast or pounding heartbeat</p><p>&middot;&nbsp; Sweating</p><p>&middot;&nbsp; Trouble breathing</p><p>&middot;&nbsp; Hallucinations</p><p>&middot;&nbsp; Confusion</p><p>&nbsp;</p><p>*<strong>Myogesic</strong> may cause dryness of the mouth. For temporary relief use sugarless gum or sweets, melt some ice in your mouth or use a saliva substitute. If dry mouth persists, talk to your dentist.</p><p>&nbsp;</p><p><strong>Speak to your doctor if you have any of these less serious side effects and they worry you.</strong></p><p>&nbsp;</p><p><strong>Serious side effects</strong></p><p>&middot;&nbsp; Signs of an allergic reaction including tightness in the chest and/or wheezing, shortness of breath and skin rash</p><p>&middot;&nbsp; Unusual bleeding or bruising</p><p>&middot;&nbsp; Unusual tiredness or weakness</p><p>&middot;&nbsp; Sores, ulcers or white spots on lips or in the mouth</p><p>&middot;&nbsp; Skin pain, red rashes, blisters and sores on the skin, peeling skin, cough and fever</p><p>&middot;&nbsp; Abdominal pain, muscle or joint pain, yellowing of the skin, dark urine or clay-coloured stools.</p><p>&middot;&nbsp; Chest pain</p><p>&middot;&nbsp; Rapid heartbeat, rapid shallow breathing, confusion, loss of appetite, feeling very tired, sleepiness.</p><p><strong>&nbsp;</strong></p><p><strong>Call your doctor straight away, or go straight to the Emergency Department at your nearest hospital if you notice any of these serious side effects.</strong></p><p>&nbsp;</p><p><strong>Tell your doctor or pharmacist if you notice anything else that may be making you feel unwell. </strong></p><p>Other side effects not listed here may occur in some people.</p><p>&nbsp;</p><p><strong>Always make sure you speak to your doctor or pharmacist before you decide to stop taking any of your medicines.</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="StorageConditionsEn">5. How to store this product</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Keep out of the reach and sight of children.</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do not take <strong>Myogesic<sup>&reg;</sup></strong> after the expiry date which is printed on the outside of the pack. The expiry date refers to the last day of that month.</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Protect from light. Store in a dry place. Do not store above 30&deg;C.</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do not use if blister seal is broken or damaged.</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do not throw away any medicines via wastewater. Ask your pharmacist how to throw away medicines you no longer use. These measures will help protect the environment.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <label style="float: left">6. Further information</label>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="IngredientsEn">a. What this product contains</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p><strong>Myogesic<sup>&reg; </sup>tablets </strong>contain the active ingredients orphenadrine citrate and paracetamol. Each tablet contains 35 mg orphenadrine citrate and 450 mg paracetamol.</p><p><strong>&nbsp;</strong></p><p><strong>Inactive ingredients</strong>: microcrystalline cellulose, hypromellose, sodium starch glycolate type A, magnesium stearate and colloidal anhydrous silica.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="ShapeAndContentsEn">b. What this product looks like and contents of the pack</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                Myogesic® tablets are white to off-white round flat tablets coded (MYO) on one side, plain on the other side.
+
+Myogesic® tablets are packed in blisters enclosed in carton boxes along with a leaflet. Available in packs of 20 (2 blisters), 50 (5 blisters), and 500 tablets (50 blisters).
+
+Not all pack sizes may be marketed. 
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="ManufacturingAndMarketingEn">c. Marketing Authorization Holder and Manufacturer</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                <p>Dar Al Dawa Development &amp; Investment Co. Ltd.</p><p>Prince Hashem Bin Al-Hussein Street.</p><p>Na&rsquo;ur &ndash; Amman &ndash; Jordan.</p><p>Tel. (+962 6) 22 22 200</p><p>Fax. (+962 6) 57 27 776</p><p>&nbsp;</p><p><strong>To report any side effects:</strong></p><p><strong>&nbsp;&middot;&nbsp; &nbsp; &nbsp; Jordan</strong></p><table border="0" cellspacing="0" cellpadding="0" style="width:553px"><tbody><tr><td style="vertical-align:top"><p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jordan Food and Drug Administration</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone: +962 6 5632000</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Website: www.jfda.jo</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reporting link:&nbsp; https://vigiflow-eforms.who-umc.org/jo/jpc</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: jpc@jfda.jo</p></td></tr></tbody></table><p>&nbsp;</p><p><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saudi Arabia</strong></p><table border="0" cellspacing="0" cellpadding="0" style="width:547px"><tbody><tr><td style="vertical-align:top"><p>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The National Pharmacovigilance Centre (NPC):</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SFDA Call Centre: 19999</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-mail: npc.drug@sfda.gov.sa</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Website: <u>https://ade.sfda.gov.sa/</u></p></td></tr></tbody></table><p>&nbsp;</p><p><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; United Arab Emirates</strong></p><p>o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emirates Drug Establishment</p><p>o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; United Arab Emirates</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: pv@ede.gov.ae</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tel: 80033784</p><p>&nbsp;</p><p><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sudan</strong></p><table border="0" cellspacing="0" cellpadding="0" style="width:547px"><tbody><tr><td style="vertical-align:top"><p>&middot;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;National Medicines and Poisons Board (NMPB)</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax: + 249 183522263</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-mail: info@nmpb.gov.sd</p><p>&minus;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Website : www.nmpb.gov.sd</p><p>&nbsp;</p></td></tr></tbody></table><p><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Other countries</strong></p><table border="0" cellspacing="0" cellpadding="0" style="width:547px"><tbody><tr><td style="vertical-align:top"><p>&minus; Please contact the relevant competent authority.</p></td></tr></tbody></table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="RevisionNoteEn">d. This leaflet was last revised in {MM/YYYY}</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="m-l-60">
+                10/2025
+            </div>
+        </div>
+    </div>
+</div>    </div>
+    <div id="A-div" class="box-data">
+<div class="p-20 text-center font-22">
+            <div class="p-10 bg-light-blue  m-t-20 m-b-20 ltr">
+                <i class="fa fa-info-circle"></i>&nbsp;
+                <span style="font-size: large; background-color: rgb(245,245,245); color: rgb(51,51,51); "> نشرة الدواء تحت مراجعة الهيئة العامة للغذاء والدواء</span>
+                <span style="font-size:small;">  (اقرأ هذه النشرة بعناية قبل البدء في استخدام هذا المنتج لأنه يحتوي على معلومات مهمة لك)</span>
+            </div>
+    <div class="p-10 bg-light-blue font-15 m-t-20 m-b-20 ltr">
+
+    </div>
+
+</div>
+<div class="clearfix rtl">
+    <div class="col-xs-12">
+        <div class="form-group clearfix">
+            <label class="h2" for="InventedNameAr">1. ما ھو هذا المستحضر وماھي دواعي استعماله</label>
+        </div>
+        <div class="form-group clearfix" style="float: right">
+            <br />
+            <p dir="RTL">يحتوي <strong>ميوجيسيك</strong> على المواد الفعالة سيترات الأورفينادرين والباراسيتامول.</p><p dir="RTL">سيترات الأورفينادرين هي مرخية للعضلات الهيكلية. تعمل في الجهاز العصبي المركزي لإرخاء العضلات. يستخدم الباراسيتامول لعلاج أو منع الألم وتقليل الحمّى.</p><p dir="RTL">&nbsp;</p><p dir="RTL">يستخدم <strong>ميوجيسيك</strong> لعلاج صداع التوتر والصداع الناجم عن تشنج العضلات الموجودة في الجزء الخلفي للرأس والرقبة.</p><p dir="RTL">يستخدم أيضًا في المساعدة على إرخاء عضلات معينة في جسمك ولتخفيف الألم وانعدام الراحة الناتج عن الالتواءات، الإجهادات العضلية أو إصابات أخرى في العضلات.</p>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group clearfix">
+            <label class="h2" for="PrecautionsAr">2. ما الذي يجب عليك معرفته قبل استعمال هذا المستحضر</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL"><strong>موانع تناول ميوجيسيك</strong><strong>:</strong></p><p dir="RTL">&middot;&nbsp; إذا كان لديك حساسية تجاه أورفينادرين سيترات، باراسيتامول أو أي من المكونات المذكورة في نهاية هذه النشرة. تحقق دائمًا من المكونات للتأكد من أنه بإمكانك استخدام هذا الدواء.</p><p dir="RTL">&middot;&nbsp; إذا كنت تعاني من أيٍ من الحالات التالية:</p><p dir="RTL">- الزرق</p><p dir="RTL">- انسداد معوي أو مرض في المريء</p><p dir="RTL">- تضخم البروستات أو انسداد المثانة</p><p dir="RTL">- الوهن العضلي الوبيل (ضعف العضلات)</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>المحاذير والاحتياطات</strong></p><p dir="RTL">&middot;&nbsp; استشر طبيبك إذا كنت:</p><p dir="RTL">- تعاني من أي مشاكل في القلب، الكبد أو الكلى</p><p dir="RTL">- تعاني من متلازمة غلبرت</p><p dir="RTL">- تعاني من نازعة هيدروجين الجلوكوز-6-فوسفات</p><p dir="RTL">- تعاني من مشاكل تعاطي الكحول</p><p dir="RTL">- لديك حساسية من الأسبرين أو أيِ من مضاد الالتهاب أو لا تتحمل مسكنات الألم</p><p dir="RTL">- تعاني من سوء التغذية</p><p dir="RTL">- تعاني من الربو</p><p dir="RTL">- لديك أي حالات طبية أخرى</p><p dir="RTL">- تتناول أدوية أخرى تحتوي على الباراسيتامول</p><p dir="RTL">- تتناول أي أدوية لأي حالة أخرى.</p><p dir="RTL">&nbsp;</p><p dir="RTL">أثناء العلاج، قد تكون معرضًا لخطر الإصابة ببعض الآثار الجانبية. من المهم أن تفهم هذه المخاطر وكيفية مراقبتها. للمعلومات الإضافية، انظر القسم 4 <strong>&quot;الأعراض الجانبية المحتملة&quot;</strong>.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>الأطفال دون 12 عامًا</strong></p><p dir="RTL">&bull; لا تقم بإعطاء <strong>ميوجيسيك</strong> للأطفال دون سن 12 سنة.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>ميوجيسيك والأدوية الأخرى</strong></p><p dir="RTL">أخبر طبيبك أو الصيدلي إذا كنت تتناول أي أدوية أخرى، بما في ذلك أي أدوية أو فيتامينات أو مكملات غذائية تحصل عليها بدون وصفة طبية من الصيدلية أو البقّالة أو متجر الأطعمة الصّحية.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>قد تتداخل بعض الأدوية مع </strong><strong>ميوجيسيك</strong><strong> وتؤثر على طريقة عمله بما في ذلك:</strong></p><p dir="RTL">&middot;&nbsp; أدوية الفينوثيازين التي تستخدم لعلاج الاضطرابات الانفعالية والعقلية الخطيرة.</p><p dir="RTL">&middot;&nbsp; الأدوية التي تستخدم لعلاج تقلصات المعدة أو تشنجها</p><p dir="RTL">&middot;&nbsp; الأدوية التي تسبب النعاس</p><p dir="RTL">&middot;&nbsp; الكحول</p><p dir="RTL">&middot;&nbsp; الأدوية التي تمنع تخثر الدم</p><p dir="RTL">&middot;&nbsp; الأدوية التي تؤثر على سرعة تفريغ الطعام من المعدة، مثل ميتوكلوبرامايد، دومبريدون، بروبانثيلين، بعض الأدوية المضادة للاكتئاب والأدوية المخدرة.</p><p dir="RTL">&middot;&nbsp; المضادات الحيوية مثل كلورامفينيكول، ريفامبيسين أو فلوكلوكساسيللين</p><p dir="RTL">&middot;&nbsp; بروبينسيد المستخدم لعلاج النقرس</p><p dir="RTL">&middot;&nbsp; زايدوفودين المستخدم لعلاج فيروس نقص المناعة المكتسبة/الايدز</p><p dir="RTL">&middot;&nbsp; كوليسترامين</p><p dir="RTL">&middot;&nbsp; الأدوية المضادة للصرع</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>اسأل طبيبك أو الصيدلي إذا لم تكن متأكدًا من الأدوية، الفيتامينات أو المكملات الغذائية التي تتناولها وما إذا كانت تؤثر على</strong> <strong>ميوجيسيك</strong></p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>ميوجيسيك والكحول </strong></p><p dir="RTL">أخبر طبيبك إذا كنت تشرب الكحول. قد يؤدي شرب الكحول أثناء استخدام <strong>ميوجيسيك</strong> إلى زيادة حدوث أو شدة الآثار الجانبية مثل النعاس.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>الحمل والرضاعة الطبيعية</strong></p><p dir="RTL">استشيري طبيبك إذا كنت حاملاً أو تخططين للحمل.</p><p dir="RTL">تحدثي إلى طبيبكِ إذا كنت مرضعًا أو تخططين للإرضاع.</p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>القيادة واستخدام الآلات</strong></p><p dir="RTL"><strong>كن حذرًا قبل القيادة أو استخدام أي آلات أو أدوات حتى تعرف تأثير </strong><strong>ميوجيسيك </strong><strong>عليك</strong>.</p><p dir="RTL">قد يتسبب <strong>ميوجيسيك</strong> بعدم وضوح الرؤية أو النعاس لدى بعض الأشخاص.</p>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+           
+            <label class="h2" for="AdministrationRoutesAr">3. ماھي طريقة استعمال هذا المستحضر</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL"><strong>كم يجب أن تتناول:</strong></p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الجرعة المعتادة هي حبتان ثلاث مرات يوميًا.</p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; لا تتناول أكثر من الجرعة الموصى بها ما لم يخبرك طبيبك بذلك.</p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; اتبع التعليمات التي تم تزويدك بها واستمر بتناول ميوجيسك حتى يخبرك الطبيب بالتوقف.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>متى يجب أن تتناول ميوجيسيك:</strong></p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; يجب تناول ميوجيسيك كما أرشدك الطبيب أو الصيدلي.</p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; لا تقم بتغيير الجرعة ما لم يخبرك طبيبك بذلك.</p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>إذا نسيت تناول ميوجيسيك</strong></p><p dir="RTL">يجب تناول <strong>ميوجيسيك</strong> بانتظام في نفس الوقت يوميًا. إذا نسيت الوقت المعتاد للجرعة وتذكرتها في غضون ساعة أو نحو ذلك من الجرعة الفائتة، قم بتناولها فورًا.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>إذا حان وقت الجرعة التالية، تجاوز الجرعة الفائتة وتناول الجرعة التالية.</strong></p><p dir="RTL"><strong>لا تقم بأخذ جرعة مضاعفة لتعويض الفائتة.</strong></p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>إذا تناولت ميوجيسيك أكثر من اللازم</strong></p><p dir="RTL">إذا كنت تعتقد أنك قد تناولت كمية كبيرة من <strong>ميوجيسيك</strong>، ربما تحتاج إلى عناية طبية طارئة. إن الجرعة الزائدة من الأدوية المحتوية على باراسيتامول قد تؤدي إلى ضرر في الكبد.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>يجب أن تقوم فورًا بِ:</strong></p><p dir="RTL">&middot;&nbsp; الاتصال بطبيبك، أو</p><p dir="RTL">&middot;&nbsp; الذهاب إلى قسم الطوارئ في أقرب مستشفى.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>قم بما سبق حتى لو لم يكن هناك أعراض تسمم أو انزعاج.</strong></p>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="SideEffectsAr">4. الأعراض الجانبية المحتملة</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL">كما هو الحال مع كل الأدوية، هذا الدواء يمكن أن يتسبب بأعراض جانبية، بالرغم أنها قد لا تحدث للجميع.</p><p dir="RTL">إذا عانيت من أي أعراض جانبية، فإن معظمها بسيطة ومؤقتة. ومع ذلك قد تحتاج بعضها عناية طبية.</p><p dir="RTL">انظر المعلومات أدناه و إذا كان لديك أسئلة أخرى عن الأعراض الجانبية، تواصل مع الطبيب أو الصيدلي.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>أعراض جانبية أقل خطورة:</strong></p><p dir="RTL">&middot;&nbsp; الغثيان</p><p dir="RTL">&middot;&nbsp; جفاف الفم*</p><p dir="RTL">&middot;&nbsp; عدم وضوح الرؤية</p><p dir="RTL">&middot;&nbsp; النعاس</p><p dir="RTL">&middot;&nbsp; الطفح الجلدي</p><p dir="RTL">&middot;&nbsp; صعوبة التبول</p><p dir="RTL">&middot;&nbsp; آلام وتقلصات المعدة</p><p dir="RTL">&middot;&nbsp; إمساك</p><p dir="RTL">&middot;&nbsp; إغماء</p><p dir="RTL">&middot;&nbsp; هبوط ضغط الدم</p><p dir="RTL">&middot;&nbsp; سرعة ضربات أو خفقان القلب</p><p dir="RTL">&middot;&nbsp; التعرق</p><p dir="RTL">&middot;&nbsp; صعوبة في التنفس</p><p dir="RTL">&middot;&nbsp; الهلوسة</p><p dir="RTL">&middot;&nbsp; الارتباك</p><p dir="RTL">&nbsp;</p><p dir="RTL">*قد يسبب <strong>ميوجيسيك</strong> جفاف الفم. للتخفيف المؤقت من الجفاف، استخدم علكة أو حلوى بدون سكر، قم بإذابة بعض الثلج في فمك أو استخدم بديلًا للعاب. إذا استمر جفاف الفم، تحدث إلى طبيب أسنانك.</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>تحدث مع طبيبك إذا سببت أي من الأعراض السابقة لك القلق.</strong></p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>أعراض جانبية شديدة الخطورة</strong></p><p dir="RTL">&middot;&nbsp; علامات التحسس بما في ذلك ضيق الصدر و/أو الأزيز التنفسي، ضيق التنفس والطفح الجلدي.</p><p dir="RTL">&middot;&nbsp; نزيف أو كدمات غير اعتيادية</p><p dir="RTL">&middot;&nbsp; تعب وإرهاق غير اعتياديين</p><p dir="RTL">&middot;&nbsp; تقرحات تصيب الفم، تقرحات الفم الداخلية أو بقع بيضاء على الشفتين أو في الفم</p><p dir="RTL">&middot;&nbsp; ألم الجلد، طفح جلدي أحمر، تنفّط وتقرّح الجلد، تقشّر الجلد، السعال والحمّى</p><p dir="RTL">&middot;&nbsp; ألم البطن، آلام العضلات أو المفاصل، اصفرار الجلد، بول داكن أو براز كلون الطين</p><p dir="RTL">&middot;&nbsp; ألم الصدر</p><p dir="RTL">&middot;&nbsp; نبض قلب سريع، تنفس سريع وضحل، ارتباك، فقدان الشهية، شعور بتعب شديد ونعاس.</p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>اتصل بطبيبك فورًا، أو اذهب مباشرة إلى قسم الطوارئ في أقرب مستشفى إذا لاحظت أي من الأعراض الجانبية الخطيرة السابقة.</strong></p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>أخبر طبيبك أو الصيدلي إذا لاحظت أي شيء آخر قد يشعرك بعدم الارتياح. </strong></p><p dir="RTL">قد تحدث أعراض جانبية لم يتم ذكرها عند بعض الأشخاص.</p><p dir="RTL">&nbsp;</p><p dir="RTL">تأكد دائمًا أن تتحدث إلى طبيبك أو الصيدلي قبل أن تأخذ قرار بالتوقف عن تناول أي دواء لديك.</p>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label class="h2" for="StorageConditionsAr">5. طريقة تخزين المستحضر</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL">-&nbsp;&nbsp; يحفظ&nbsp; بعيدًا عن متناول أيدي الاطفال و نظرهم.</p><p dir="RTL">-&nbsp;&nbsp; لا تتناول<strong> ميوجيسيك</strong> بعد تاريخ الانتهاء المذكور على العبوة الخارجية. يدل تاريخ الانتهاء على آخر يوم في الشهر المذكور.</p><p dir="RTL">-&nbsp;&nbsp; يحفظ بعيدًا عن الضوء في مكان جاف على درجة حرارة لا تزيد عن 30 درجة مئوية.</p><p dir="RTL">-&nbsp;&nbsp; لا تستخدم في حال وجدت الشريط تالفًا أو مفتوحًا.</p><p dir="RTL">-&nbsp;&nbsp; لا تتخلص من الأدوية في المياه العادمة أو النفايات المنزلية. اسأل الصيدلي حول الطريقة السليمة للتخلص من الأدوية التي لم تعد بحاجة إليها. سيساعد هذا في حماية البيئة</p>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <label style="float: right">6. معلومات أخرى</label>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="IngredientsAr">أ‌. على ماذا يحتوي هذا المستحضر</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL">يحتوي <strong>&nbsp;</strong><strong>ميوجيسيك</strong><strong> </strong>على أورفينادرين سيترات و باراسيتامول كمواد فعالة. يحتوي كل قرص على 35 ملغم أورفينادرين سيترات و 450 ملغم باراسيتامول.</p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>المكونات غير الفعالة:</strong> سيليلوز دقيق البلورية، هيبروميلوز، أملاح الصوديوم لجليكولات النشا نوع A، ستيارات المغنيسيوم، سيليكا غروية لامائية.</p>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="ShapeAndContentsAr">ب‌. كيف يبدو شكل هذا المستحضر وماهي محتويات العلبة</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL">أقراص <strong>ميوجيسيك</strong> هي أقراص لونها أبيض إلى سكري دائرية الشكل ومسطحة مرمزة بالرمز (MYO) على جهة، وملساء على الجهة الأخرى.</p><p dir="RTL">أقراص <strong>ميوجيسيك</strong><strong> </strong>معبأة في أشرطة، يحتوي كل شريط على 10 أقراص. <strong>ميوجيسيك</strong><strong> </strong>متوفر في عبوات سعتها 20 قرص (شريطان)، 50 قرص (5 أشرطة)، و500 قرص (50 شريط).</p><p dir="RTL">&nbsp;</p><p dir="RTL">قد لا يتم تسويق جميع أحجام العبوات.</p>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="ManufacturingAndMarketingAr">ت‌. الشركة المصنعة ومالك حق التسويق</label>
+        </div>
+        <div class="m-r-60">
+            <p dir="RTL">شركة دارالدواء للتنمية والاستثمار المساهمة المحدودة</p><p dir="RTL">شارع الأمير هاشم بن الحسين</p><p dir="RTL">ناعور- عمان - الأردن</p><p dir="RTL">هاتف. 200 22 22 (6 962 +)</p><p dir="RTL">فاكس.776 27 57 (6 962 +)</p><p dir="RTL"><strong>للإبلاغ حول الأعراض الجانبية التي قد تحدث يرجى التواصل عبر العناوين التالية:</strong></p><p dir="RTL"><strong>&nbsp;</strong></p><p dir="RTL"><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الأردن</strong></p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; المؤسسة العامة للغذاء والدواء</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp; الرقم:&nbsp; 5632000 6 00962&nbsp;&nbsp;</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp; الموقع الإلكتروني: www.jfda.jo</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp; رابط التبليغ: https://vigiflow-eforms.who-umc.org/jo/jpc</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp; البريد الإلكتروني: jpc@jfda.jo&nbsp;</p><p dir="RTL">&nbsp;</p><p dir="RTL"><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; المملكة العربية السعودية</strong></p><table dir="rtl" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td style="vertical-align:top"><ul><li dir="RTL">المركز الوطني للتيقظ والسلامة الدوائية</li></ul><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الرقم الموحد 19999</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; البريد الإلكتروني: npc.drug@sfda.gov.sa</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الموقع الإلكتروني: &nbsp;https://ade.sfda.gov.sa</p></td></tr></tbody></table><p>&nbsp;</p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الإمارات العربية المتحدة</p><p dir="RTL">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; مؤسسة الإمارات للدواء</p><p dir="RTL">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الإمارات العربية المتحدة</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; البريد الالكتروني: pv@ede.gov.ae</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الهاتف: 80033784</p><p>&nbsp;</p><p dir="RTL"><strong>&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; السودان</strong></p><p dir="RTL">o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; المجلس القومي للأدوية والسموم</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; فاكس: 522263 183 (249+)</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; البريد الإلكتروني: info@nmpb.gov.sd</p><p dir="RTL">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الموقع الإلكتروني: www.nmpb.gov.sd</p><p>&nbsp;</p><p dir="RTL">&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; الدول الأخرى</p><p>&nbsp;-الرجاء الاتصال بالمؤسسات والهيئات الوطنية في كل دولة</p>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label class="h2" for="RevisionNoteAr">ث‌. تمت مراجعة هذه النشرة في التاريخ الذي تمت فيه مراجعة النشرة بالشهر والسنة</label>
+        </div>
+        <div class="m-r-60">
+            10/2025
+        </div>
+    </div>
+</div>
+    </div>
+    <div id="M-div" class="box-data">
+
+
+    <div class="p-20 text-center font-22">
+            <div class="p-10 bg-light-blue font-15 m-t-20 m-b-20 ltr"><i class="fa fa-info-circle"></i>&nbsp;Read this leaflet carefully before you start using this product as it contains important information for you</div>
+    </div>
+<div class="row clearfix ltr">
+
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label style="float: left" for="MedicinalName">1. NAME OF THE MEDICINAL PRODUCT </label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                Myogesic® tablets
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label style="float: left" for="QualitativeQuantitativeComposition">2. QUALITATIVE AND QUANTITATIVE COMPOSITION </label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                Myogesic® tablets. Each tablet contains 35 mg Orphenadrine Citrate and 450 mg Paracetamol.
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label style="float: left" for="DosageForm">3. PHARMACEUTICAL FORM </label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                Tablets
+White to off-white round flat tablets coded (MYO) on one side, plain on the other side.
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <label style="float: left">4. CLINICAL PARTICULARS</label>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="TherapeuticIndications">4.1 Therapeutic Indications</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Tension headache, occipital headaches associated with spasm of skeletal muscles in the region of the head and neck. Acute and traumatic conditions of the limbs and trunk: sprains, strains, whiplash injuries, acute torticollis, prolapsed intervertebral disc.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="PosologyAndMethodAdministration">4.2 Posology And Method Administration</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>2 tablets three times daily.</p><p>Method of administration<br />For oral use.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="Contraindications">4.3 Contraindications</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                • Glaucoma
+• Prostatic hypertrophy or obstruction at the bladder neck,
+• Myasthenia gravis
+• Oesophageal spasm and pyloric or duodenal obstruction.
+• Hypersensitivity to paracetamol or orphenadrine citrate
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="SpecialWarnings">4.4. Special warnings and precautions for use</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Identified precautions<br />Orphenadrine citrate should be used with caution in patients with tachycardia, cardiac decompensation, coronary insufficiency or cardiac arrhythmias, Gilbert&rsquo;s syndrome and Glucose &ndash; 6 &ndash; phosphate &ndash; dehydrogenase deficiency.<br />Myogesic&reg; may be dangerous when used in large amounts or for long periods. Hepatotoxicity may occur with paracetamol even at therapeutic doses, after short treatment duration and in patients without pre-existing liver dysfunction</p><p>Hepatotoxicity may develop following as little as 10 to 15g of paracetamol and hepatic failure is known to occur occasionally with long term use of paracetamol.<br />Caution is advised in patients with underlying sensitivity to aspirin and/or to non-steroidal anti-inflammatory drugs (NSAIDs).<br />Caution is advised in patients with known analgesic intolerance or known bronchial asthma as hypersensitivity reactions including bronchospasm are possible.<br />Severe cutaneous adverse reactions (SCARs): Life threatening cutaneous reactions Stevens-Johnson Syndrome (SJS), and Toxic Epidermal Necrolysis (TEN) have been reported with the use of paracetamol.<br />Patients should be advised of the signs and symptoms and monitored closely for skin reactions. If symptoms or signs of SJS and TEN (e.g. progressive skin rash often with blisters or mucosal lesions) occur, patients should stop treatment immediately and seek medical advice.<br />Cases of high anion gap metabolic acidosis (HAGMA) due to pyroglutamic acidosis have been reported in patients with severe illness such as severe renal impairment and sepsis, or in patients with malnutrition or other sources of glutathione deficiency (e.g. chronic alcoholism) who were treated with paracetamol at therapeutic doses for a prolonged period or a combination of paracetamol and flucloxacillin. If HAGMA due to pyroglutamic acidosis is suspected, prompt discontinuation of paracetamol and close monitoring, including measurement of urinary 5-oxoproline, is recommended. The measurement of urinary 5-oxoproline may be useful to identify pyroglutamic acidosis as underlying cause of HAGMA in patients with multiple risk factors.<br />Concomitant treatment with other medicines that contain orphenadrine or paracetamol is not recommended.<br />Safety of continuous long-term therapy with orphenadrine has not been established. Therefore, if orphenadrine is prescribed for prolonged use, periodic monitoring of blood, urine and liver function is recommended.<br />Use in hepatic impairment<br />Use with caution in patients with impaired liver function: Underlying liver disease increases the risk of paracetamol-related liver damage.<br />Cases of hepatic dysfunction/failure have been reported in patients with depleted glutathione levels, such as those who are severely malnourished, anorexic, have a low body mass index, are chronic heavy users of alcohol or have sepsis.<br />In patients with glutathione depleted states the use of paracetamol may increase the risk of metabolic acidosis.<br />Use in renal impairment<br />Use with caution in patients with impaired kidney function. Administration of paracetamol to patients with moderate to severe renal impairment may result in accumulation of paracetamol conjugates.</p><p>Use in the elderly<br />The elderly should be advised to take a reduced dosage as they may be more susceptible to anti-cholinergic side effects at regular doses.<br />Paediatric use<br />Myogesic&reg; is not recommended for children under 12 years of age.<br />Effects on laboratory tests<br />Uric acid and blood glucose: Intake of paracetamol may affect the laboratory determination of uric acid by phosphotungstic acid and of blood glucose by glucose oxidase-peroxidase</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="InteractionsOtherMedicines">4.5. Interactions with other medicinal products</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Interactions have been reported between orphenadrine and phenothiazines and other drugs with anti-muscarinic properties. Concomitant use with alcohol or other CNS depressants should be avoided.<br />&bull; Anticoagulants: Paracetamol may increase the risk of bleeding in patients taking warfarin and other antivitamin K medicines. Anticoagulant dosage may require reduction, and patients should be monitored for appropriate coagulation and bleeding complications.<br />&bull; Chloramphenicol: Paracetamol may increase chloramphenicol concentrations by slowing down excretion, entailing the risk of increased toxicity.<br />&bull; Cholestyramine: reduces the absorption of paracetamol if given within 1 hour of paracetamol. Chelating resins can decrease the intestinal absorption of paracetamol and potentially decrease its efficacy if taken simultaneously. In general, there must be an interval of more than 2 hours between taking the resin and taking paracetamol, if possible.<br />&bull; Drugs which affect motility:<br />o Paracetamol absorption is increased by drugs which increase gastric emptying e.g. metoclopramide and domperidone<br />o Paracetamol absorption is decreased by drugs which decrease gastric emptying such as propantheline, antidepressants with anticholinergic properties, and narcotic analgesics.<br />&bull; Flucloxacillin: Co-administration of flucloxacillin with paracetamol may lead to high anion gap metabolic acidosis due to pyroglutamic acidosis, particularly in patients presenting risk factors of glutathione depletion, such as sepsis, malnutrition or chronic alcoholism.<br />&bull; Probenecid: Paracetamol excretion may be affected and plasma concentrations altered when given probenecid.</p><p>&bull; Zidovudine: When used concurrently with zidovudine, an increased tendency for neutropenia may develop. Combination of Paracetamol and zidovudine should be avoided.<br />&bull; Hepatotoxic Drugs and Liver Microsomal Enzyme Inducers: The risk of paracetamol toxicity may be increased in patients receiving other potentially hepatotoxic drugs or drugs that induce liver microsomal enzymes, such as antiepileptics (such as phenobarbital, phenytoin, carbamazepine, topiramate), alcohol, barbiturates and rifampicin. The induced metabolism results in an elevated production of the hepatotoxic oxidative metabolite of paracetamol. Hepatotoxicity will occur if this metabolite exceeds the normal glutathione binding capacity.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="FertilityAndPregnantWarnings">4.6. Fertility, pregnancy and lactation</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Effects on fertility<br />No data available</p><p>Use in pregnancy &ndash; Pregnancy Category B2<br />Orphenadrine/Paracetamol is not recommended for use during pregnancy.</p><p>Use in lactation.<br />Orphenadrine/Paracetamol should not be taken during lactation as orphenadrine and paracetamol are excreted into breast milk.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="EffectsAbilityDriveMachines">4.7. Effects on ability to drive and use machines</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Orphenadrine may impair the ability of the patient to engage in potentially hazardous activities such as operating machinery or driving a motor vehicle; ambulatory patients should therefore be cautioned accordingly.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="UndesirableEffects">4.8. Undesirable effects</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Adverse effects are mainly due to the anti-cholinergic action of orphenadrine and are usually associated with higher doses.</p><p>Orphenadrine citrate<br />More common reactions<br />The known adverse effects include dryness of the mouth, tachycardia, palpitation, urinary hesitancy or retention, blurred vision, dilation of the pupils, increased ocular tension, weakness, nausea, headache, dizziness, constipation and drowsiness. These effects can usually be eliminated by reducing the dose.<br />Less common reactions<br />Sedation, skin rashes and other allergic reactions are very uncommon adverse effects. Infrequently an elderly patient may experience some degree of mental confusion. Very rare cases of aplastic anaemia associated with the use of orphenadrine have been reported.</p><p><br />Paracetamol<br />Reports of adverse reactions are rare.</p><p>The following reactions have been reported: dyspepsia, sweating, erythema, urticaria, anaphylactic shock, angioneurotic oedema, difficulty breathing, drop in blood pressure, nausea, allergic reactions such as skin rashes, hypersensitivity reactions and haematological reactions, including thrombocytopenia, leukopenia, neutropenia, agranulocytosis and pancytopenia. Toxic Epidermal Necrolysis (TEN), Stevens-Johnson Syndrome (SJS), acute generalised exanthematous pustulosis, fixed drug eruption (see Section 4.3 Special Warnings and Precautions for Use) and cytolytic hepatitis, which may lead to acute hepatic failure, have also been reported.<br />Bronchospasm may be triggered in patients having a tendency of analgesic asthma.<br />Haemolytic anaemia, particularly in patients with underlying glucose 6-phosphate-dehydrogenase deficiency has been reported. Kounis syndrome has been reported, as has high anion gap metabolic acidosis due to pyroglutamic acidosis in patients with pre-disposing factors for glutathione depletion.</p><p><br />Reporting suspected adverse effects<br />Reporting suspected adverse reactions after registration of the medicinal product is important. It allows continued monitoring of the benefit-risk balance of the medicinal product.</p><p>To report adverse effects:<br />&bull; Saudi Arabia<br />&bull; The National Pharmacovigilance Centre (NPC):<br />&minus; SFDA Call Centre: 19999<br />&minus; E-mail: npc.drug@sfda.gov.sa<br />&minus; Website: https://ade.sfda.gov.sa/</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="Overdoes">4.9. Overdoes</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>No specific information is available on overdosage with Orphenadrine/Paracetamol.</p><p>Elderly persons, small children, patients with liver disorders, chronic alcohol consumption or chronic malnutrition, as well as patients concomitantly treated with enzymes-inducing drugs are at an increased risk of intoxication, including fatal outcome. Overdosage with paracetamol if left untreated can result in severe, sometimes fatal liver damage and rarely, acute renal tubular necrosis.</p><p>Symptoms and Signs<br />Orphenadrine overdosage: Known symptoms of overdose with orphenadrine include tachycardia, excitement, confusion and delirium leading to coma. Convulsions, dilated pupils and urinary retention may occur.</p><p>Paracetamol overdosage: In adults, hepatotoxicity may occur after ingestion of a single dose of paracetamol 10 to 15 g; a dose of 25 g or more is potentially fatal.<br />Symptoms during the first two days of acute poisoning by paracetamol do not reflect the potential seriousness of the intoxication. Major manifestations of liver failure such as jaundice, hypoglycaemia and metabolic acidosis may take at least three days to develop.<br />Toxic symptoms include vomiting, abdominal pain, hypotension and sweating. Nausea, vomiting, anorexia, pallor and abdominal pain generally appear during the first 24 hours of overdosage with paracetamol. Overdosage with paracetamol may cause hepatic cytolysis which can lead to hepatocellular insufficiency, gastrointestinal bleeding, metabolic acidosis, encephalopathy, disseminated intravascular coagulation, coma and death. Increased levels of hepatic transaminases, lactate dehydrogenase and bilirubin with a reduction in prothrombin level can appear 12 to 48 hours after acute overdosage. Overdosage can also lead to pancreatitis acute renal failure and pancytopenia.<br />Treatment<br />Despite lack of significant early symptoms, patients should be referred to hospital urgently for immediate medical attention.<br />Activated charcoal may reduce absorption of paracetamol if given within one hour after oral ingestion. In patients who are not fully conscious or have impaired gag reflex, consideration should be given to administering activated charcoal via a nasogastric tube, once the airway is protected .<br />Where paracetamol intoxication is suspected, intravenous administration of SH group donators such as acetylcysteine may be indicated. Although acetylcysteine is most effective if initiated within this period, it can still offer some degree of protection if given as late as 48 hours after ingestion; in this case it is taken for longer .<br />Further measures will depend on the severity, nature and course of clinical symptoms of intoxication and should follow standard intensive care protocols .<br />Convulsions and delirium respond to relatively large doses of diazepam, preferably by mouth. Adequate hydration of the patient is important.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <label style="float: left">5. PHARMACOLOGICAL PROPERTIES</label>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="PharmacodynamicProperties">5.1. Pharmacodynamic Properties</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Mechanism of action<br />Orphenadrine is a skeletal muscle relaxant. Paracetamol is an analgesic and antipyretic.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+                <label style="float: left" for="PharmacokineticProperties">5.2. Pharmacokinetic Properties</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>No data available</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="PreclinicalSafetyData">5.3 Preclinical Safety Data</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Genotoxicity<br />No data available.</p><p>Carcinogenicity<br />No data available.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <label style="float: left">6. PHARMACEUTICAL PARTICULARS</label>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="ExcipientsList">6.1 Excipients List</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Microcrystalline cellulose, hypromellose, sodium starch glycolate type A, magnesium stearate and colloidal anhydrous silica.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="Incompatibilities">6.2. Incompatibilities</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Not applicable.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="ShelfLife">6.3. Shelf Life</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                60 Months
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="PrecautionsStorageConditions">6.4. Special precautions for storage</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Protect from light. Store in a dry place. Do not store above 30&deg;C.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="ContainerContents">6.5. Nature and contents of container</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Immediate Packaging:&nbsp;PVC (Polyvinyl Chloride) &amp; Aluminum Foil</p><p>Outer Packaging: Cardboard box</p><p>Myogesic&reg; tablets are available in packs of 20 tablets (2 blisters of 10 tablets), 50 tablets (5 blisters of 10 tablets) and 500 tablets (50 blisters of 10 tablets).</p><p><br />Not all pack sizes may be marketed</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-11 col-offset">
+        <div class="clearfix">
+            <label style="float: left" for="SpecialPrecautionsDisposal">6.6. Special precautions for disposal and other handling</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                <p>Any unused product or waste material should be disposed of in accordance with local requirements.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label style="float: left" for="AuthorizationMarketingHolder">7. MARKETING AUTHORISATION HOLDER</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                Dar Al Dawa Development & Investment Co Ltd
+Prince Hashem Bin Al-Hussein Street .
+Na’ur – Amman – Jordan .
+Tel. (+962 6) 22 22 200
+Fax. (+962 6) 57 27 776
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="clearfix">
+            <label style="float: left" for="RevisionDateText">8. DATE OF REVISION OF THE TEXT</label>
+        </div>
+        <div class="form-group">
+            <br />
+            <div class="ltr">
+                10/2025
+            </div>
+        </div>
+    </div>
+</div>
+
+            }    </div>
+    <div id="f-div" class="box-data">
+        
+<div class="row clearfix rtl">
+    <div class="container-fluid">
+        <!-- Basic Example -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="header">
+                <h2>صورة المنتج على الرف</h2>
+            </div>
+            <div class="body">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            
+                                <img src="/images/nodrugimags.png">
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Example -->
+        <!-- With Captions -->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="header">
+                <h2>الصورة الاساسية</h2>
+            </div>
+            <div class="body">
+                <div id="carousel-example-generic_2" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic_2" data-slide-to="0" class=""></li>
+                        <li data-target="#carousel-example-generic_2" data-slide-to="1" class="active"></li>
+                        <li data-target="#carousel-example-generic_2" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                                <img src="/images/nodrugimags.png">
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic_2" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic_2" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- #END# With Captions -->
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- #END# Tabs With Custom Animations -->
+</div>
+        <a style="background-image: url('../images/banner.png');"
+           class="scroll-top">
+            <img style="margin: 15px;" src="/images/icons/up-arrow2.png" width="35">
+        </a>
+
+        <div class="footer navbar-fixed-bottom">
+            		
+		<div class="footer">
+			<div class="sfda-footer" style="text-align:center">
+    <a href="https://www.sfda.gov.sa/ar/terms-of-use" target="_blank">
+        شروط الاستخدام
+    </a>
+    |
+    <a href="https://www.sfda.gov.sa/ar/privacy-policy" target="_blank">
+        سياسة الخصوصية
+    </a>
+</div>
+            <br class="visible-xs visible-sm"><br class="visible-xs visible-sm">
+
+        </div>
+    </section>
+
+
+    <script src="/lib/json2/json2.js?v=w3DjWhUtDqy3bSJKv285C-2kagUtW9F64T9z3xRah8g"></script>
+    <script src="/lib/jquery/dist/jquery.js?v=w4hyv6-vmv08RC2hK00wXgxDziKII9paMAbU_M-5dgY"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js?v=T574NvJTWc-Pan8hAmnXXc0eZFiqKRp7xQ3sz5QiFOk"></script>
+    <script src="/lib/moment/min/moment-with-locales.js?v=5f0RFtuChrGi6osDzegxXWf5yOkmx45i7J9fM1p6P5w"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.js?v=ZDzsHzuLAtqQVxXwbgRtfAPXQ7UAoJRXBAUDvc9G9CI"></script>
+    <script src="/lib/blockUI/jquery.blockUI.js?v=KKcUNqwNyTLaXzvuMyFk6JisiQq6Hk7ZtrciXnEf3Z0"></script>
+    <script src="/lib/toastr/toastr.js?v=s1ewxfN8Vn23TAVRLUk8XiQUAw6uWhhuPO9dmtYzUiA"></script>
+    <script src="/lib/sweetalert/dist/sweetalert.min.js?v=aPktydUv1rN3mouQeXoKi3ioFTIQlULuqYeoTAA2ihY"></script>
+    <script src="/lib/spin.js/spin.js?v=b1plKpQIB-XuGyjWec42MhmhpPzEPzFI3OC8Ia0XIoc"></script>
+    <script src="/lib/spin.js/jquery.spin.js?v=i7H7HL08ldqUANgfQInE7LlU2uWUdQMCJ-Q7-_zLutY"></script>
+    <script src="/lib/bootstrap-select/dist/js/bootstrap-select.js?v=tXulJKckrq2j2wo8a9hvmXLDEQwhGviPTIYmEzy1dNI"></script>
+    <script src="/lib/jquery-slimscroll/jquery.slimscroll.js?v=ESVSX4dkOxamaRoYfcqPM2FfErhgfxS60fp1Fa8ou1w"></script>
+    <script src="/lib/Waves/dist/waves.js?v=ZOMv1vwqpT_ezNZGhvr9jJTr_jqu3lYHB7vmpxD7HmA"></script>
+    <script src="/lib/push.js/push.js?v=w347yqiscLjM_TxUKpqeUA1LDR3w5vshQpxpTsgkLhE"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=EjNSmvtPSqCVK_xG_aTvOp8hmVM_7vwyd3hg45CAMGk"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=XEXcdRYb4eN3XoQCbnM-BSR6UifHRLsXYDIVFZ7Oc6Q"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=h3viOCmHM1K7HnYUuJPDvLchk2Ge8CoKvl6ZJfICgII"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=fPp3O_ILaqD0UHiR721w1i4iBtxo3NH7yfldI5dg0_I"></script>
+    <script src="/js/admin.js?v=nakObLuf3yPs2VlWrIris5w-48c36X3YIRrxIis7IKQ"></script>
+    <script src="/js/main.js?v=x_HDlXByl0okIi4i04d4Q_fNr85GPQi1W8gjs82s-n8"></script>
+    <script src="/view-resources/Views/Shared/_Layout.js?v=36YkLzPJaGejZMB10f2T6f1rMVIzDKq96kjfcnxcLVg"></script>
+
+
+        <script src="/lib/jquery-validation/src/localization/messages_ar.js?v=6kzy-p-PtvkHPWdHWyjMOIfwhBFlUYYv9jnF7zJnpUI"></script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="/AbpServiceProxies/GetAll?v=639052884517047963" type="text/javascript"></script>
+    <script src="/AbpScripts/GetScripts?v=639052884517047963" type="text/javascript"></script>
+    <script src="/lib/signalr-client/signalr.min.js?v=1yGr-J4NjYMQVt6LP6vocjHIWhO-BFQLfdCs8x1Mv-U"></script>
+    <script src="/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=jTdZBAadu6DXq0iDTFX6vsn4q6bFhKm3XfN8Jz6dSmg"></script>
+    
+    <!-- View specific scripts -->
+    
+    <script src="/view-resources/Views/Home/Index.js?v=mAIakROmG_IlahImCtfrMSdaLPTG5Uoh6Z0hM1g3cxw"></script>
+    <script src="/view-resources/Views/Home/Result.js?v=0pEgOuTQc8ZyJaaOpJCG7ytkKSCkzEMYCHEJfKDWu4k"></script>
+    <script src="/view-resources/Views/Home/DrugsSearch.js?v=04aRniTG_ClH5tABzf7EDwQgWVpkDNpjeJUDSGvOK_Y"></script>
+
+</body>
+</html>

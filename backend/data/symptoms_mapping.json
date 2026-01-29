@@ -1,0 +1,21 @@
+{
+    "حرارة مرتفعة / حمى": "fever, high temperature, pyrexia, paracetamol, acetaminophen",
+    "صداع / آلام الرأس": "headache, migraine, pain relief, paracetamol, ibuprofen",
+    "سعال (كحة)": "cough, dry cough, antitussive, dextromethorphan, guifenesin",
+    "آلام البطن / مغص": "stomach pain, abdominal cramps, antispasmodic, hyoscine, buscopan",
+    "حساسية": "allergy, antihistamine, allergic reaction, cetirizine, loratadine",
+    "زكام / إنفلونزا": "cold, flu, influenza, nasal congestion, pseudoephedrine, xylometazoline",
+    "آلام العضلات / المفاصل": "muscle pain, joint pain, analgesic, anti-inflammatory, diclofenac, ibuprofen",
+    "آلام أو التهاب العين": "eye irritation, conjunctivitis, ophthalmic, sodium chloride, naphazoline",
+    "آلام الأذن": "ear pain, otic, ear drops, ciprofloxacin, polymyxin",
+    "طفح جلدي / حكة": "skin rash, itching, dermatitis, topical, hydrocortisone, fusidic acid",
+    "إسهال": "diarrhea, antidiarrheal, loperamide, diosmectite",
+    "آلام الحلق": "throat pain, sore throat, pharyngitis, lozenges, chlorhexidine, amylmetacresol",
+    "ربو": "asthma, bronchodilator, salbutamol, ventolin",
+    "سكري": "diabetes, insulin, hypoglycemic, metformin, glimepiride",
+    "ضغط دم مرتفع": "hypertension, high blood pressure, amlodipine, lisinopril",
+    "أمراض قلب": "heart disease, cardiovascular, aspirin, clopidogrel",
+    "مشاكل في الكلى": "kidney issues, renal",
+    "مشاكل في الكبد": "liver issues, hepatic",
+    "لا يوجد": "none"
+}
