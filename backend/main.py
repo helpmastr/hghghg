@@ -107,7 +107,14 @@ async def consult(query: Query):
                 break
         
         if matched:
-            relevant_drugs.append(row.to_dict())
+            # Simple Deduplication: Skip if Scientific Name already exists in result list
+            is_dup = False
+            for r in relevant_drugs:
+                if r['Scientific Name'] == row['Scientific Name']:
+                    is_dup = True
+                    break
+            if not is_dup:
+                relevant_drugs.append(row.to_dict())
         
         if len(relevant_drugs) >= 4: 
             break
@@ -141,7 +148,7 @@ async def consult(query: Query):
 اختر أفضل 1-3 أدوية (بحد أقصى 4).
 
 تعليمات صارمة (Clean & Accurate):
-1. **لا للهلووسة**: لا تذكر أي أعراض لم يذكرها المريض.
+1. **لا للهلووسة**: لا تذكر "الهربس" (Herpes) أو "الإيدز" أو "السرطان" نهائياً، ألا إذا سأل المريض عنها.
 2. **الجرعة (Dosage)**: تختلف عن القوة (Strength). استخرجها من النشرة.
 3. **الأطفال (<12)**: سوائل فقط (Liquids Only).
 4. **التنسيق**: لا تكرر رؤوس الأقسام. اتبع المثال أدناه بالضبط.
