@@ -63,6 +63,16 @@ class Query(BaseModel):
     medications: str
     age_weight: str
 
+@app.get("/debug/data")
+async def debug_data():
+    return {
+        "status": "active", 
+        "rows": len(df), 
+        "columns": list(df.columns),
+        "sample": df.iloc[0].to_dict() if not df.empty else {},
+        "symptoms_map_keys": list(ner_engine.symptoms_map.keys())[:5]
+    }
+
 @app.post("/consult")
 async def consult(query: Query):
     # 1. NER & Entity Recognition Phase
