@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pill, Ruler, AlertTriangle, CheckCircle, Search, MapPin, Download, Baby } from 'lucide-react';
+import { Pill, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const SYMPTOM_OPTIONS = [
     { id: 'fever', label: 'حرارة مرتفعة / حمى' },
@@ -68,7 +68,9 @@ function App() {
         };
 
         try {
-            const response = await fetch('https://hghghg-production.up.railway.app/consult', {
+            // Production URL for Netlify
+            const apiUrl = 'https://hghghg-production.up.railway.app/consult';
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(submissionData)
@@ -205,17 +207,14 @@ function App() {
                             <p style={{ whiteSpace: 'pre-line' }}>{result}</p>
                         </div>
 
-                        <div className="result-section">
-                            <div className="result-title"><CheckCircle /> حالة الهيئة</div>
-                            <p style={{ fontWeight: 700, color: 'var(--primary)' }}>✅ تم التحقق في قاعدة بيانات هيئة الغذاء والدواء الرسمية.</p>
-                        </div>
+                        {!result.startsWith("خطأ") && (
+                            <div className="result-section">
+                                <div className="result-title"><CheckCircle /> حالة الهيئة</div>
+                                <p style={{ fontWeight: 700, color: 'var(--primary)' }}>✅ تم التحقق في قاعدة بيانات هيئة الغذاء والدواء الرسمية.</p>
+                            </div>
+                        )}
 
-                        {/* 5. Quick Action Buttons */}
-                        <div className="chips">
-                            <button className="chip"><MapPin size={20} /> أرني أقرب صيدلية مفتوحة</button>
-                            <button className="chip"><Download size={20} /> تحميل التعليمات كـ PDF</button>
-                            <button className="chip"><Baby size={20} /> التحقق من نسخة آمنة للأطفال</button>
-                        </div>
+
                     </div>
                 )}
             </section>
