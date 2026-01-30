@@ -18,6 +18,7 @@ class ClinicalNER:
 
     def _load_symptoms(self):
         paths = [
+            "symptoms_mapping.json", # Check root/CWD first
             "data/symptoms_mapping.json", 
             "backend/data/symptoms_mapping.json",
             "../data/symptoms_mapping.json"
