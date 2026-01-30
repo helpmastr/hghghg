@@ -132,7 +132,7 @@ async def consult(query: Query):
         context = "No specific match found in SFDA master database for translated keywords."
 
     # 3. Formulate prompt to generate response in ARABIC
-education_rule = ""
+    education_rule = ""
     # Simple heuristic: if "سنة" in age_weight and number < 12 => force liquids?
     # Actually, let the LLM deduce from "{query.age_weight}".
     
