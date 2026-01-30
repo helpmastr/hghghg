@@ -65,13 +65,18 @@ class Query(BaseModel):
 
 @app.get("/debug/data")
 async def debug_data():
-    return {
-        "status": "active", 
-        "rows": len(df), 
-        "columns": list(df.columns),
-        "sample": df.iloc[0].to_dict() if not df.empty else {},
-        "symptoms_map_keys": list(ner_engine.symptoms_map.keys())[:5]
-    }
+    try:
+        import os
+        return {
+            "cwd": os.getcwd(),
+            "df_rows": len(df) if 'df' in globals() else "Not Defined",
+            "map_size": len(ner_engine.symptoms_map) if 'ner_engine' in globals() else "Not Defined",
+            "symptoms_file_exists": any([os.path.exists(p) for p in ["data/symptoms_mapping.json", "backend/data/symptoms_mapping.json"]]),
+            "sample_map": list(ner_engine.symptoms_map.keys())[:3] if 'ner_engine' in globals() and ner_engine.symptoms_map else "Empty",
+            "status": "Alive"
+        }
+    except Exception as e:
+        return {"error": str(e), "type": str(type(e))}
 
 @app.post("/consult")
 async def consult(query: Query):
