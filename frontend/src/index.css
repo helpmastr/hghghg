@@ -24,6 +24,10 @@ body {
   color: var(--text);
   line-height: 1.6;
   text-align: right;
+  -webkit-font-smoothing: antialiased;
+  /* iOS Font Smoothing */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
 }
 
 h1,
@@ -36,6 +40,8 @@ h3 {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  /* iOS Home Bar Safety */
 }
 
 /* Hero Section */
@@ -97,15 +103,20 @@ h3 {
   font-size: 1.1rem;
 }
 
+/* Input Zoom Fix for iOS */
 .form-group input,
-.form-group textarea {
-  width: 100%;
+.form-group textarea,
+.form-select {
+  font-size: 16px !important;
+  /* Prevents auto-zoom on iOS */
   padding: 1rem;
+  width: 100%;
   border: 2px solid var(--secondary);
   border-radius: 12px;
-  font-size: 1rem;
+  background: var(--white);
   font-family: inherit;
-  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  /* Removes default iOS styling */
 }
 
 .form-group input:focus,
