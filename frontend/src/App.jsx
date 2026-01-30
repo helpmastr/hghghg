@@ -207,12 +207,7 @@ function App() {
                             <p style={{ whiteSpace: 'pre-line' }}>{result}</p>
                         </div>
 
-                        {!result.startsWith("خطأ") && (
-                            <div className="result-section">
-                                <div className="result-title"><CheckCircle /> حالة الهيئة</div>
-                                <p style={{ fontWeight: 700, color: 'var(--primary)' }}>✅ تم التحقق في قاعدة بيانات هيئة الغذاء والدواء الرسمية.</p>
-                            </div>
-                        )}
+
 
 
                     </div>
