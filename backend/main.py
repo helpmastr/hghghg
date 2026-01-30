@@ -91,15 +91,18 @@ async def consult(query: Query):
     relevant_drugs = []
     
     # Perform Search in Master DB
+    import re
     for _, row in df.iterrows():
         trade = str(row["Trade Name"]).lower()
         scientific = str(row["Scientific Name"]).lower()
         
-        # Check for matches
+        # Check for matches (Regex Word Boundary)
         matched = False
         for term in search_terms:
-            t = term.lower()
-            if t in trade or t in scientific:
+            # Escape to handle special chars like '+' in 'Cold + Flu'
+            # \b matches word boundary
+            pattern = r'\b' + re.escape(term.lower()) + r'\b'
+            if re.search(pattern, trade) or re.search(pattern, scientific):
                 matched = True
                 break
         
